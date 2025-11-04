@@ -15,7 +15,7 @@ FModel - to export the physics asset
 Unreal Engine 4.26.2
 JsonAsAsset Plugin in Blender: https://github.com/JsonAsAsset/JsonAsAsset/releases/tag/1.3.9
 
-### Optional
+### Optional Tools
 CNS CustomNanoSuit (This not a guide on CNS as a whole. Review the CNS wiki for more information if you've never used it before):
 https://github.com/Dekita/SB-CustomNanosuitSystem-Docs/blob/main/README.md
 
