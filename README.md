@@ -209,6 +209,7 @@ Then package your mod as normal and place in the appropriate folder in game.
 
 PonyTail Clipping Should no longer be occurring.
 
+
 #### If using Custom NanoSuit:
 
 Package your mod as normal for CNS with the new PonyTail PhysicsAsset in your Outfits folder in the OutfitMods folder.
