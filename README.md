@@ -115,33 +115,22 @@ You will now see your mesh file and can see the collision boxes for the ponytail
 
 On the left in the Skeleton Tree you will see the following bone structure. Next to each I have included a description and the number of shapes part of each bone.:
 
+```
 Root (1 Box, Ground)
-
-  Bip001-Pelvis (1 Capsule, Butt/Hips)
-  
-    Bip001-Spine (1 Tapered Capsule, Torso)
-    
-      Bip001-Spine2 (2 Capsules, 0-Chest, 1-Traps/Back)
-      
-      Bip001-Neck (1 Tapered Capsule, Neck)
-      
-        Bip001-L-UpperArm (1 Capsule, Left Shoulder/Bicep)
-        
-          Bip001-L-Forearm (1 Sphere - "Do Not Touch", 1 Tapered Capsule - Left Forearm)
-          
-        Bip001-R-UpperArm (1 Capsule, Right Shoulder/Bicep)
-        
-          Bip001-R-Forearm (1 Sphere - "Do Not Touch", 1 Tapered Capsule - Right Forearm)
-          
+  Bip001-Pelvis (1 Capsule, Butt/Hips) 
+    Bip001-Spine (1 Tapered Capsule, Torso) 
+      Bip001-Spine2 (2 Capsules, 0-Chest, 1-Traps/Back)   
+      Bip001-Neck (1 Tapered Capsule, Neck)   
+        Bip001-L-UpperArm (1 Capsule, Left Shoulder/Bicep)    
+          Bip001-L-Forearm (1 Sphere - "Do Not Touch", 1 Tapered Capsule - Left Forearm)      
+        Bip001-R-UpperArm (1 Capsule, Right Shoulder/Bicep)   
+          Bip001-R-Forearm (1 Sphere - "Do Not Touch", 1 Tapered Capsule - Right Forearm)    
       Bip001-Head (1 Sphere - Skull/Top of Head, 1 Capsule - Face)
-      
     Bip001-L-Thigh (1 Tapered Capsule, Left Thigh)
-    
       Bip001-L-Calf (1 Tapered Capsule, Left Calf)
-      
     Bip001-R-Thigh (1 Tapered Capsule, Right Thigh)
-    
       Bip001-R-Calf (1 Tapered Capsule, Right Calf)
+```
 
 Out of these the most likely ones to need to be changed are:
 
