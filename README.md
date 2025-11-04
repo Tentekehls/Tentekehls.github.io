@@ -114,55 +114,88 @@ You will now see your mesh file and can see the collision boxes for the ponytail
 ### Editing the PhysicsAsset
 
 On the left in the Skeleton Tree you will see the following bone structure. Next to each I have included a description and the number of shapes part of each bone.:
+
 Root (1 Box, Ground)
+
   Bip001-Pelvis (1 Capsule, Butt/Hips)
+  
     Bip001-Spine (1 Tapered Capsule, Torso)
+    
       Bip001-Spine2 (2 Capsules, 0-Chest, 1-Traps/Back)
+      
       Bip001-Neck (1 Tapered Capsule, Neck)
+      
         Bip001-L-UpperArm (1 Capsule, Left Shoulder/Bicep)
+        
           Bip001-L-Forearm (1 Sphere - "Do Not Touch", 1 Tapered Capsule - Left Forearm)
+          
         Bip001-R-UpperArm (1 Capsule, Right Shoulder/Bicep)
+        
           Bip001-R-Forearm (1 Sphere - "Do Not Touch", 1 Tapered Capsule - Right Forearm)
+          
       Bip001-Head (1 Sphere - Skull/Top of Head, 1 Capsule - Face)
+      
     Bip001-L-Thigh (1 Tapered Capsule, Left Thigh)
+    
       Bip001-L-Calf (1 Tapered Capsule, Left Calf)
+      
     Bip001-R-Thigh (1 Tapered Capsule, Right Thigh)
+    
       Bip001-R-Calf (1 Tapered Capsule, Right Calf)
 
 Out of these the most likely ones to need to be changed are:
+
 Bip001-Spine2 - Capsule 0
+
 Bip001-Pelvis
 
 If you prefer to do this via Interactive Transformations, here are some helpful keybinds:
+
 W - Move
+
 E - Rotate
+
 R - Scale
 
-Further Documentation on Transformations in Unreal Engine from the developer page:
+Further Documentation on Transformations in Unreal Engine from the developer guide:
 https://dev.epicgames.com/documentation/en-us/unreal-engine/transforming-actors-in-unreal-engine#interactivetransformation
 
 I personally prefer to change these assets via Manual Transformations.
+
 To do this select your bone in the Skeleton Tree and navigate in the details pane to the Body Setup Tab.
-Under this you will Primitives, Expand this array and you will see the shapes making up this Bone Group.
+
+Under this you will see Primitives, Expand this array and you will see the shapes making up this Bone Group.
 
 For this example let's edit the chest.
+
 Select Bip001-Spine2 in the Skeleton Tree
-In the Details Pane navigate and expand capsule 0 under Body Setup in the Details pane.
+
+In the Details Pane navigate to and expand capsule 0 under Body Setup in the Details pane as seen below.
+
 <img width="3824" height="765" alt="image" src="https://github.com/user-attachments/assets/216d69fc-bd24-428b-9fb6-15468b5926e9" />
 
 
 Under this Capsule you will see Center, Rotation, Radius, and Length.
+
 For directional Reference (Based on Character Mesh's Left / Right):
+
 X: + = Right, - = Left
+
 Y: + = Down, - = Up
+
 Z: + = Forward, - = Back
 
 Center will adjust the position of the Capsule
-Rotation will adjust the Roll (X), Pitch (Y), and Yaw (Z) 
+
+Rotation will adjust the Roll (X), Pitch (Y), and Yaw (Z)
+
 Radius: The base size of the Capsule
+
 Length: How long the Capusule is. For most shapes this increases the width in the Character Mesh
 
+
 Play with the values until the Shape more closely matches the Character meshes actual size.
+
 It is recommended the Shape be slightly bigger than the mesh to ensure no clipping occurs. Do not be afraid to move the position of the bone group if needed. These only control the PonyTail Collision and do not affect other Assets.
 
 Repeat on the needed shapes until you are happy with the match. For my mesh this meant editing the Position, Size and Length of the chest capsule (0 in Bip001-Spine2) and the Pelvis Capsule (Bip001-Pelvis).
@@ -173,29 +206,43 @@ Finished Physics Asset:
 
 
 ### Exporting
-If you are replacing base outfits in game:
+#### If you are replacing base outfits in game:
+
 Duplicate your Physics Mesh twice and name each of them to match the 3 original PonyTailPhysics Assets:
+
 CH_P_EVE_09_PonytailPhysicsAsset
+
 CH_P_EVE_09_TypeB_PonytailPhysicsAsset
+
 CH_P_EVE_09_TypeC_PonytailPhysicsAsset
 
 Then package your mod as normal and place in the appropriate folder in game.
+
 PonyTail Clipping Should no longer be occurring.
 
-If using Custom NanoSuit:
-Package your mod as normal for CNS.
+#### If using Custom NanoSuit:
+
+Package your mod as normal for CNS with the new PonyTail PhysicsAsset in your Outfits folder in the OutfitMods folder.
+
 Navigate to and open your dekcns.json file.
+
 Under OutfitPaths, add a line for PonyPhysics with the path to your PonyTail Physics Asset.
+
 This Should Look Something like this:
+
 PonyPhysics": "/Game/OutfitMods/TestPhysics/CH_P_EVE_09_TypeB_PonytailPhysicsAsset.CH_P_EVE_09_TypeB_PonytailPhysicsAsset"
 
 <img width="1114" height="401" alt="image" src="https://github.com/user-attachments/assets/dd9573cf-fe73-40c3-8f37-867e39ec912f" />
 
 Save your dekcns.json file and clipping should now be fixed in game.
+
 Note that you can only have one PonyPhysics reference per outfit.
+
 If you have multiple Outfits with different mesh sizes in OutfitPaths then you will need to split them up into seperate outfits, each with their own UniqueFitID or use OutfitData.
+
 If any parameter in OutfitData is used, including PonyPhysics then OutfitPaths is ignored and you must fully configure OutfitData.
 
+Guide on using OutfitData:
 https://github.com/Dekita/SB-CustomNanosuitSystem-Docs/blob/main/guides/cns-json-advanced.md
 
 Final Result:
