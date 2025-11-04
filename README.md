@@ -12,8 +12,11 @@ To fix this we will need to update the Ponytail PhysicsAsset's hitboxes to match
 
 ### Required Tools:
 FModel - to export the physics asset
+
 Unreal Engine 4.26.2
+
 JsonAsAsset Plugin in Blender: https://github.com/JsonAsAsset/JsonAsAsset/releases/tag/1.3.9
+
 
 ### Optional Tools
 CNS CustomNanoSuit (This not a guide on CNS as a whole. Review the CNS wiki for more information if you've never used it before):
@@ -21,30 +24,43 @@ https://github.com/Dekita/SB-CustomNanosuitSystem-Docs/blob/main/README.md
 
 ### Setup JsonAsAsset
 First download the 4.26.2.rar package from JsonAsAsset's release page.
+
 Once it is downloaded open your Unreal Project Folder. By Default this is in Documents > Unreal Projects > SB
+
 Within this folder there should be a Plugins Folder. If there is not then create it.
+
 <img width="980" height="621" alt="image" src="https://github.com/user-attachments/assets/240d0529-07fe-41c9-a4b2-37758b5e1c37" />
 
 Extract the Contents of the JsonAsAsset plugin into the plugins folder. There should now be a folder titled JsonAsAsset in the Plugins folder.
+
 Open Unreal Engine and open your project.
+
 In Unreal Engine, select Edit > Plugins. Then search for JsonAsAsset. Make sure it is enabled. If it is disabled, enable it and close then reopen Unreal Engine.
 
 ### Extract the PonyTail Physics Collision model
 
 Open Fmodel, and select and load your game files. Refer to Extracting Game Files for more information if you don't know how to setup FModel: 
+
 https://github.com/Stellar-Blade-Modding-Team/Stellar-Blade-Modding-Guide/wiki/Extracting-game-files
 
 Within FModel Navigate to SB > Content > Art > Character > PC
+
 Within this folder is all of the outfit meshes for the game. If you know which Mesh you are replacing, feel free to Select the Folder matching your original outfit mesh.
+
 For the purposes of this tutorial we are going to be using the default NanoSuit, CH_P_EVE_09.
 
 <img width="638" height="778" alt="image" src="https://github.com/user-attachments/assets/a82444fb-f5fc-43fb-a656-0ee1499a870e" />
 
 Once you have selected the appropriate outfit folder. Open Packages in the top.
+
 Within this list you will see many assets for this outfits including:
+
 CH_P_EVE_09_PonytailPhysicsAsset
+
 CH_P_EVE_09_TypeB_PonytailPhysicsAsset
+
 CH_P_EVE_09_TypeC_PonytailPhysicsAsset
+
 
 It does not matter which asset you start with, for this example I am using CH_P_EVE_09_TypeB_PonytailPhysicsAsset.
 
@@ -62,13 +78,13 @@ In your Unreal Engine Project, Select the new JsonAsAsset Icon from the top as s
 
 In the File Selector that comes up, navigate to your FModel Export folder and then find your saved json physics asset. This path will match the one extracted from Fmodel.
 
-For me this was located at:
+For me this was located at: 
 \FModel\Output\Exports\SB\Content\Art\Character\PC\CH_P_EVE_09\CH_P_EVE_09_TypeB_PonytailPhysicsAsset.json
 
-Select the file and click Open.
-This will automatically load the physics asset at the correct directory.
+Select the file and click Open. This will automatically load the physics asset at the correct directory with the original name.
 
 DoubleClick on the new physics asset to open it.
+
 You will immediately get the following warning:
 
 "Warning: Physics Asset has no skeletal mesh assigned.
@@ -77,19 +93,22 @@ You can fix this by opening the asset and choosing another skeletal mesh from th
 
 Select Ok
 
-<img width="682" height="572" alt="image" src="https://github.com/user-attachments/assets/5d0142da-2c5d-410d-907a-38da67eaaeeb" />
-
 You will then be given another Warning saying there is no corresponding bones in the Skeletal Mesh.
 
+<img width="682" height="572" alt="image" src="https://github.com/user-attachments/assets/5d0142da-2c5d-410d-907a-38da67eaaeeb" />
+
 IMPORTANT: Click "Cancel".
+
 If you click OK then the bones will be deleted and you will have to reimport.
 
 If done correctly you will now see a very unassuming cube in the Physics Asset Editor.
+
 At the top of the Physics Asset Editor, select "Preview Mesh" and select your custom character mesh.
 
 <img width="1142" height="657" alt="image" src="https://github.com/user-attachments/assets/d609ff3f-2a93-471c-972d-08fb91f7d004" />
 
-You will now see your mesh file and can see the collision boxes for the ponytail with your outfit.
+You will now see your mesh file and can see the collision boxes for the ponytail on your outfit.
+
 <img width="1432" height="1342" alt="image" src="https://github.com/user-attachments/assets/a445aa86-a0a1-47f1-91fb-277ab11790a0" />
 
 ### Editing the PhysicsAsset
