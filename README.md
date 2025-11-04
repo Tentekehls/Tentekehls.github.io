@@ -5,11 +5,10 @@
 
 If you've edited the size of your character's model from default, you may notice the ponytail will clip through your character's model like below:
 
-<img width="662" height="1003" alt="StellarBlade   11_3_2025 10_16_29 PM" src="https://github.com/user-attachments/assets/9450739f-d2ad-4c8d-b941-344e4ba33f5f" />
+<img width="662" height="1003" alt="BrokenCollision" src="https://github.com/user-attachments/assets/f167fb21-270a-457b-9775-79ed7201f792" />
 
-
-This is due to the ponytail mesh file still pointing to the default Collision in the PonyTail Physics Asset.
-To fix this we will need to update the Ponytail Physics Asset's hitboxes to match our new meesh.
+This is due to the ponytail mesh file still pointing to the default collision groups in the Outfit's PonyTail PhysicsAsset.
+To fix this we will need to update the Ponytail PhysicsAsset's hitboxes to match our new meesh.
 
 ### Required Tools:
 FModel - to export the physics asset
