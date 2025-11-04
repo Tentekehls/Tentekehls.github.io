@@ -45,7 +45,7 @@ https://github.com/Stellar-Blade-Modding-Team/Stellar-Blade-Modding-Guide/wiki/E
 
 Within FModel Navigate to SB > Content > Art > Character > PC
 
-Within this folder is all of the outfit meshes for the game. If you know which Mesh you are replacing, feel free to Select the Folder matching your original outfit mesh.
+Within this folder is all of the outfit meshes for the game. If you know which outfit you are replacing, select the folder matching your original outfit mesh.
 
 For the purposes of this tutorial we are going to be using the default NanoSuit, CH_P_EVE_09.
 
